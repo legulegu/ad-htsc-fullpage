@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import ReactFullpage from '@fullpage/react-fullpage';
-import Section1 from '../full-page/Section1/index';
-import Section2 from '../full-page/Section2/index';
+import Section1 from "../full-page/Section1";
 
-class Fullpage extends React.Component {
+import "./lg-side-nav.scss";
+
+class App extends React.Component {
   onLeave(origin, destination, direction) {
     // arguments are mapped in order of fullpage.js callback arguments
     // do something with the event
@@ -21,8 +22,8 @@ class Fullpage extends React.Component {
 
           return (
             <ReactFullpage.Wrapper>
-              <Section1/>
-              <Section2/>
+              <Section1 />
+              <Section1 />
             </ReactFullpage.Wrapper>
           );
         }}
@@ -31,4 +32,6 @@ class Fullpage extends React.Component {
   }
 }
 
-ReactDOM.render(<Fullpage />, document.getElementById('ad-htsc'));
+App.defaultProps = {};
+
+ReactDOM.render(<App />, document.querySelector("#data-center"));
